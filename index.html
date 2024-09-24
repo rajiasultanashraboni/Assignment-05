@@ -23,6 +23,25 @@
       .lexend {
         font-family: "Lexend", sans-serif;
       }
+
+      .active {
+        background-color: #b4f461 !important;
+        color: #111111 !important;
+        border-color: transparent !important;
+      }
+
+      /* Hidden sections */
+      .hidden {
+        display: none;
+      }
+
+      /* History item style */
+      .history-item {
+        background-color: #f9f7f3;
+        padding: 15px;
+        border-radius: 8px;
+        margin-bottom: 10px;
+      }
     </style>
   </head>
   <body class="lexend">
@@ -69,25 +88,24 @@
       </div>
 
       <!-- Banner Section -->
-      <div class="flex justify-center items-center pt-10 gap-7 bg-[#F9F7F3] p-5" id="buttonContainer">
-        <a href="index.html">
-          <button
-            id="donation-btn"
-            class="border px-5 py-2 rounded-lg font-[600] text-xl text-[#111111]"
-          >
-            Donation
-          </button>
-        </a>
-        <a href="./history.html">
-          <button
-            id="history-btn"
-            class="px-5 py-2 rounded-lg font-[600] text-xl text-[#111111B3] border border-[1px solid rgba(17, 17, 17, 0.3)]"
-          >
-            History
-          </button>
-        </a>
-      </div>
-    <main class="w-[80%] mx-auto">
+      <div
+      class="flex justify-center items-center pt-10 gap-7 bg-white p-5"
+      id="buttonContainer"
+    >
+      <button
+        id="donation-btn"
+        class="border px-5 py-2 rounded-lg font-[600] text-xl text-[#111111]"
+      >
+        Donation
+      </button>
+      <button
+        id="history-btn"
+        class="px-5 py-2 rounded-lg font-[600] text-xl text-[#111111B3] border border-[1px solid rgba(17, 17, 17, 0.3)]"
+      >
+        History
+      </button>
+    </div>
+    <main class="w-[80%] mx-auto" id="donation-section">
       <!-- donate for flood in noakhali i here -->
       <div
         class="mt-10 lg:flex lg:space-x-10 border border-[ 1px solid rgba(17, 17, 17, 0.1)] p-5 rounded-lg"
@@ -103,7 +121,7 @@
             class="flex items-center space-x-2 bg-[#1111110D] rounded-lg px-5 py-2 w-[150px] cursor-pointer"
           >
             <img src="./assets/coin.png" alt="" />
-            <p id="donation-amount">0 BDT</p>
+            <p id="donation-amount-noakhali">0 BDT</p>
           </div>
           <h1 class="text-[20px] font-[600] text-[#111111]">
             Donate for Flood at Noakhali, Bangladesh
@@ -117,13 +135,13 @@
             need.
           </p>
           <input
-            id="donation-input"
+          id="donation-input-noakhali"
             class="border border-[1px solid rgba(17, 17, 17, 0.1)] text-[#11111166] px-5 py-2 rounded-lg lg:w-[500px]"
             type="text"
             placeholder="Write Donation Amount"
           /><br />
           <button
-            id="donate-btn"
+          id="donate-btn-noakhali"
             class="bg-[#B4F461] px-5 py-2 rounded-lg text-[#111111] text-[20px] font-[600] lg:w-[500px]"
           >
             Donate Now
@@ -131,22 +149,6 @@
         </div>
       </div>
 
-      <!-- modal is here  -->
-      <dialog id="success-modal" class="modal">
-        <div
-          class="modal-box flex flex-col items-center justify-center text-center"
-        >
-          <h3 class="text-lg font-bold py-3">Congrats!</h3>
-          <img src="./assets/coin.png" alt="" />
-          <p class="py-3">You have Donated for Humankind</p>
-          <p class="py-3 text-lg font-bold">Successfully</p>
-          <div class="modal-action">
-            <button class="btn" onclick="closeModal()">
-              Close Confirmation
-            </button>
-          </div>
-        </div>
-      </dialog>
 
       <!-- Donate for Flood Relief in Feni,Bangladesh  -->
       <div
@@ -163,7 +165,7 @@
             class="flex items-center space-x-2 bg-[#1111110D] rounded-lg px-5 py-2 w-[150px] cursor-pointer"
           >
             <img src="./assets/coin.png" alt="" />
-            <p>600 BDT</p>
+            <p id="donation-amount-feni">600 BDT</p>
           </div>
           <h1 class="text-[20px] font-[600] text-[#111111]">
             Donate for Flood Relief in Feni,Bangladesh
@@ -178,12 +180,12 @@
             difference. Please consider donating today to assist those in urgent
             need.
           </p>
-          <input
+          <input id="donation-input-feni"
             class="border border-[1px solid rgba(17, 17, 17, 0.1)] text-[#11111166] px-5 py-2 rounded-lg lg:w-[500px]"
             type="text"
             placeholder="Write Donation Amount"
           /><br />
-          <button
+          <button id="donate-btn-feni"
             class="bg-[#B4F461] px-5 py-2 rounded-lg text-[#111111] text-[20px] font-[600] lg:w-[500px]"
           >
             Donate Now
@@ -205,7 +207,7 @@
             class="flex items-center space-x-2 bg-[#1111110D] rounded-lg px-5 py-2 w-[150px] cursor-pointer"
           >
             <img src="./assets/coin.png" alt="" />
-            <p>2400 BDT</p>
+            <p id="donation-amount-quota">2400 BDT</p>
           </div>
           <h1 class="text-[20px] font-[600] text-[#111111]">
             Aid for Injured in the Quota Movement
@@ -221,12 +223,12 @@
             consider making a donation to support these brave individuals in
             their time of need.
           </p>
-          <input
+          <input id="donation-input-quota"
             class="border border-[1px solid rgba(17, 17, 17, 0.1)] text-[#11111166] px-5 py-2 rounded-lg lg:w-[500px]"
             type="text"
             placeholder="Write Donation Amount"
           /><br />
-          <button
+          <button id="donate-btn-quota"
             class="bg-[#B4F461] px-5 py-2 rounded-lg text-[#111111] text-[20px] font-[600] lg:w-[500px]"
           >
             Donate Now
@@ -234,31 +236,30 @@
         </div>
       </div>
     </main>
+
+      <!-- History Section (Initially Hidden) -->
+      <main class="w-[80%] mx-auto hidden" id="history-section">
+        <h1 class="text-2xl font-bold text-center mt-10">History of Donations</h1>
+        <div id="history-container" class="mt-5"></div>
+      </main>
+
+
+    <!-- modal is here  -->
+    <dialog id="success-modal" class="modal">
+      <div class="modal-box max-w-xs sm:max-w-sm md:max-w-md p-4 sm:p-6 md:p-8 flex flex-col items-center justify-center text-center">
+        <h3 class="text-lg sm:text-xl font-bold py-2">Congrats!</h3>
+        <img src="./assets/coin.png" alt="Coin" class="w-16 h-16 sm:w-24 sm:h-24" />
+        <p class="py-2 text-sm sm:text-base">You Have Donated for Humankind</p>
+        <p class="py-2 text-base sm:text-lg font-bold">Successfully</p>
+        <div class="modal-action">
+          <button class="btn text-sm sm:text-base" onclick="closeModal()">Close Confirmation</button>
+        </div>
+      </div>
+    </dialog>
     <footer>
       <div class="bg-[#F9F7F3] h-[150px] mt-10"></div>
     </footer>
 
-    <script>
-
-        var container = document.getElementById("buttonContainer");
-
-        // Get all buttons within the container
-        var buttons = container.getElementsByTagName("button");
-
-        // Loop through all buttons and add event listener
-        for (var i = 0; i < buttons.length; i++) {
-          buttons[i].addEventListener("click", function() {
-            // Remove the active class from any currently active button
-            var currentActive = container.getElementsByClassName("active");
-            if (currentActive.length > 0) {
-              currentActive[0].classList.remove("active");
-            }
-            
-            // Add the active class to the clicked button
-            this.classList.add("active");
-          });
-        }
-    </script>
 
     <script src="./file.js"></script>
   </body>

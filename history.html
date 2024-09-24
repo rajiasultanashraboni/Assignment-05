@@ -23,6 +23,12 @@
       .lexend {
         font-family: "Lexend", sans-serif;
       }
+      /* Style for active button */
+      .active {
+        background-color: #b4f461 !important; /* Ensure background color stays */
+        color: white !important; /* Ensure text color changes */
+        border-color: transparent !important; /* Optional: make border invisible */
+      }
     </style>
   </head>
   <body class="lexend">
@@ -66,17 +72,23 @@
     </div>
 
     <!-- banner section button is started here  -->
-    <div class="flex justify-center items-center mt-10 gap-7">
+
+    <div
+      class="flex justify-center items-center pt-10 gap-7 bg-[#F9F7F3] p-5"
+      id="buttonContainer"
+    >
       <a href="index.html">
         <button
-          class="border border-[1px solid rgba(17, 17, 17, 0.3) px-5 py-2 rounded-lg font-[600] text-xl text-[#111111]"
+          id="donation-btn"
+          class="border px-5 py-2 rounded-lg font-[600] text-xl text-[#111111]"
         >
           Donation
         </button>
       </a>
       <a href="./history.html">
         <button
-          class="px-5 py-2 rounded-lg font-[600] text-xl text-[#111111B3] border border-[1px solid rgba(17, 17, 17, 0.3);]"
+          id="history-btn"
+          class="px-5 py-2 rounded-lg font-[600] text-xl text-[#111111B3] border border-[1px solid rgba(17, 17, 17, 0.3)]"
         >
           History
         </button>
