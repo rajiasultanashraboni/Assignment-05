@@ -25,7 +25,7 @@ for (var i = 0; i < buttons.length; i++) {
 const successModal = document.getElementById("success-modal");
 const navbarAmountDisplay = document.getElementById("navbar-amount");
 const historyContainer = document.getElementById("history-container");
-let initialNavbarAmount = 5500; // Default navbar amount
+let initialNavbarAmount = 5500;
 
 //  update navbar amount
 function updateNavbarAmount(amount) {
